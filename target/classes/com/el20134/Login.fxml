@@ -17,15 +17,11 @@
 </AnchorPane> -->
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../login.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.el20134.Login">
-   <children>
       <VBox prefHeight="400.0" prefWidth="200.0" styleClass="login-logo-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
             <FontIcon iconColor="#c79a29" iconLiteral="mdi2b-book" iconSize="64" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LibNtua" />
-         </children>
       </VBox>
       <VBox layoutX="224.0" layoutY="25.0" prefHeight="350.0" prefWidth="350.0" styleClass="login-form-container" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-         <children>
             <Label id="choice-prompt-text" text="Choose Account Type:" />
             <ChoiceBox fx:id="acc_selector" prefWidth="150.0" styleClass="account-selector" />
             <Label text="Username:" />
@@ -34,7 +30,5 @@
             <TextField fx:id="password_fld" styleClass="input-field" />
             <Button fx:id="login_btn" mnemonicParsing="false" text="Button" />
             <Label fx:id="error_lbl" styleClass="error_lbl" text="Error" />
-         </children>
       </VBox>
-   </children>
 </AnchorPane>
