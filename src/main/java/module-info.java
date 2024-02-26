@@ -1,6 +1,6 @@
 module com.el20134{
     requires javafx.base;
-    requires javafx.controls;
+    requires transitive javafx.controls;
     requires javafx.fxml;
     requires transitive javafx.graphics;
     requires org.kordamp.ikonli.core;

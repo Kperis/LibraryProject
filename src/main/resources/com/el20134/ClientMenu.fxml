@@ -6,41 +6,33 @@
 <?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main-menu-container" stylesheets="@../../clientmenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left-container">
-         <children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main-menu-container" stylesheets="@../../clientmenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.el20134.ClientMenuController">
+      <AnchorPane prefHeight="730.0" prefWidth="180.0" styleClass="left-container">
             <VBox prefHeight="100.0" prefWidth="160.0" styleClass="title-container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
                   <FontIcon iconColor="#b18c4c" iconLiteral="fas-book" iconSize="48" text="" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to LibNtua" />
-               </children>
             </VBox>
             <VBox layoutX="40.0" layoutY="148.0" prefHeight="500.0" prefWidth="160.0" styleClass="menu-container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Home">
+                  <Button fx:id="home_btn" mnemonicParsing="false" text="Home">
                      <graphic>
-                        <FontIcon iconLiteral="fas-home" />
+                        <FontIcon iconLiteral="fas-home" iconSize="20" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" text="My Books">
+                  <Button fx:id="mybooks_btn" mnemonicParsing="false" text="My Books">
                      <graphic>
-                        <FontIcon iconLiteral="mdi2l-library-shelves" />
+                        <FontIcon iconLiteral="mdi2l-library-shelves" iconSize="20" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" text="Profile">
+                  <Button fx:id="profile_btn" mnemonicParsing="false" text="Profile">
                      <graphic>
-                        <FontIcon iconLiteral="mdi2a-account" />
+                        <FontIcon iconLiteral="mdi2a-account" iconSize="20" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" text="Logout">
+                  <Button fx:id="logout_btn" mnemonicParsing="false" text="Logout">
                      <graphic>
-                        <FontIcon iconLiteral="mdi2l-logout" />
+                        <FontIcon iconLiteral="mdi2l-logout" iconSize="20" />
                      </graphic>
                   </Button>
-               </children>
             </VBox>
-         </children>
       </AnchorPane>
-   </children>
 </VBox>

@@ -6,7 +6,7 @@
 .left-container{
     -fx-background-color: #116466;
     -fx-background-radius: 10;
-    -fx-effect: dropshadow(two-pass-box, #2c3531, 5,0,0,4);
+    /* -fx-effect: dropshadow(two-pass-box, #2c3531, 5,0,0,4); */
 }
 
 .title-container{
@@ -18,7 +18,8 @@
 
 .title-container Text{
     -fx-fill: #d9b08c;
-    -fx-font-size: 1.2em;
+    /* -fx-font-size: 1.2em; */
+    -fx-font-weight: bold;
 }
 
 .menu-container{

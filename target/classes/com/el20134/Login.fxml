@@ -16,7 +16,7 @@
     </children>
 </AnchorPane> -->
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../login.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.el20134.Login">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../login.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.el20134.LoginController">
       <VBox prefHeight="400.0" prefWidth="200.0" styleClass="login-logo-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <FontIcon iconColor="#c79a29" iconLiteral="mdi2b-book" iconSize="64" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LibNtua" />
@@ -28,7 +28,7 @@
             <TextField fx:id="username_fld" styleClass="input-field" />
             <Label text="Password" />
             <TextField fx:id="password_fld" styleClass="input-field" />
-            <Button fx:id="login_btn" mnemonicParsing="false" text="Button" />
-            <Label fx:id="error_lbl" styleClass="error_lbl" text="Error" />
+            <Button fx:id="login_btn" mnemonicParsing="false" text="Login" />
+            <Label fx:id="error_lbl" styleClass="error_lbl" />
       </VBox>
 </AnchorPane>

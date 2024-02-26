@@ -1,0 +1,9 @@
+.home-container{
+    -fx-background-color: #d1e8e2;
+}
+
+.searchbox{
+    -fx-background-color: #d1e8e2;
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}

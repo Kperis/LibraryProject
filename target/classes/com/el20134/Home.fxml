@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="home-container" stylesheets="@../../home.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.el20134.HomeController">
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="home-container" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="searchbox">
+                  <VBox prefHeight="100.0" prefWidth="200.0">
+                        <Label text="Title" />
+                        <TextField fx:id="title_fld" />
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="200.0">
+                        <Label text="Author" />
+                        <TextField fx:id="author_fld" />
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="200.0">
+                        <Label text="Publication Year" />
+                        <TextField fx:id="publication_fld" />
+                  </VBox>
+            </HBox>
+            <ListView fx:id="books_listview" prefHeight="580.0" prefWidth="810.0" />
+      </VBox>
+</AnchorPane>
