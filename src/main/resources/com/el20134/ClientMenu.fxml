@@ -7,7 +7,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main-menu-container" stylesheets="@../../clientmenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.el20134.ClientMenuController">
-      <AnchorPane prefHeight="730.0" prefWidth="180.0" styleClass="left-container">
+      <AnchorPane prefHeight="730.0" prefWidth="170.0" styleClass="left-container">
             <VBox prefHeight="100.0" prefWidth="160.0" styleClass="title-container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                   <FontIcon iconColor="#b18c4c" iconLiteral="fas-book" iconSize="48" text="" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to LibNtua" />

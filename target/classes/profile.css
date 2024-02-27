@@ -1,0 +1,29 @@
+.profile-container{
+    -fx-background-color: #d1e8e2;
+    -fx-spacing: 40;
+}
+
+.profile-container Text{
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+    -fx-fill: #d9b08c;
+}
+
+.profile-item{
+    -fx-spacing: 10;
+    -fx-background-radius: 20;
+    -fx-background-color: #2c3531;
+    -fx-effect: dropshadow(one-pass-box, black, 5,5,0,5);
+    -fx-padding: 16;
+    -fx-pref-height: 50;
+}
+
+.profile-item Label{
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #ffcb9a;
+}
+
+.profile-item Text{
+    -fx-font-size: 1.1em;
+    -fx-fill: #ffcb9a;
+}
