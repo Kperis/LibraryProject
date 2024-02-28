@@ -22,6 +22,7 @@ public class ViewFactory {
     private AnchorPane booksView;
     private AnchorPane usersView;
     private AnchorPane categoriesView;
+    private AnchorPane borrowsView;
 
 
     private void createStage(FXMLLoader loader){
@@ -132,6 +133,17 @@ public class ViewFactory {
             }
         }
         return usersView;
+    }
+
+    public AnchorPane getBorrowsView(){
+        if(borrowsView == null){
+            try{
+                borrowsView = new FXMLLoader(getClass().getResource("Borrows.fxml")).load();
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return borrowsView;
     }
 
     public AnchorPane getCategoriesView(){

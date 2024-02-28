@@ -19,7 +19,10 @@ public class AdminMenuController implements Initializable {
     }
 
     private void addListeners(){
-    
+        users_btn.setOnAction(event -> onUsersList());
+        categories_btn.setOnAction(event -> onCategories());
+        borrows_btn.setOnAction(event -> onBorrows());
+        books_btn.setOnAction(event -> onBooks());
     }
 
     private void onBooks(){
@@ -32,5 +35,9 @@ public class AdminMenuController implements Initializable {
 
     private void onUsersList(){
         Model.getInstance().getViewFactory().getAdminSelectedMenu().set("UsersList");
+    }
+
+    private void onBorrows(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenu().set("Borrows");
     }
 }

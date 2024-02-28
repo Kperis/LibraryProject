@@ -1,0 +1,17 @@
+.book-container{
+    -fx-background-color: #2c3531;
+    -fx-background-radius: 10;
+}
+
+
+.book-container-vbox{
+    -fx-background-color: #2c3531;
+    -fx-spacing: 4;
+    -fx-background-radius: 10;
+    -fx-padding: 2;
+}
+
+.book-container-vbox Label{
+    -fx-font-size: 0.9em;
+    -fx-text-fill: #ffcb9a;
+}
