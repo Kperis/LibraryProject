@@ -21,9 +21,10 @@ public class LoginController implements Initializable {
     
     public TextField password_fld;
     public Label error_lbl;
+
     
     public Button login_btn;
-
+    public Button register_now_btn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -31,17 +32,43 @@ public class LoginController implements Initializable {
         acc_selector.setValue(Model.getInstance().getViewFactory().getLoginAccountType());
         acc_selector.valueProperty().addListener(observable -> Model.getInstance().getViewFactory().setLoginAccountType(acc_selector.getValue()));
         login_btn.setOnAction(event -> onLogin());
+        register_now_btn.setOnAction(event -> ontoRegistration());
     }
 
     private void onLogin(){
         Stage stage = (Stage) error_lbl.getScene().getWindow();
-        Model.getInstance().getViewFactory().closeStage(stage);
         if(Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT){
-            Model.getInstance().getViewFactory().showClientWindow();
+            for(User user : Model.getInstance().users){
+                if(user.getUsername() == username_fld.getText() && user.getPassword() == password_fld.getText()){
+                    Model.getInstance().getViewFactory().showClientWindow();
+                    Model.getInstance().getViewFactory().closeStage(stage);
+                }
+                else{
+                    username_fld.setText("");
+                    password_fld.setText("");
+                    error_lbl.setText("Invalid username/password");
+                }
+            }      
         }
         else{
-            Model.getInstance().getViewFactory().showAdminWindow();
+            for(User user : Model.getInstance().users){
+                if(user.getUsername() == username_fld.getText() && user.getPassword() == password_fld.getText()){
+                    Model.getInstance().getViewFactory().showAdminWindow();
+                    Model.getInstance().getViewFactory().closeStage(stage);
+                }
+                else{
+                    username_fld.setText("");
+                    password_fld.setText("");
+                    error_lbl.setText("Invalid username/password");
+                }
+            }
         }
+    }
+
+    private void ontoRegistration(){
+        Stage stage = (Stage) error_lbl.getScene().getWindow();
+        Model.getInstance().getViewFactory().showRegisterWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
     }
 }
 

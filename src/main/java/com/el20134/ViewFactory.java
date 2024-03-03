@@ -99,6 +99,11 @@ public class ViewFactory {
         createStage(loader);
     }
 
+    public void showRegisterWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Register.fxml"));
+        createStage(loader);
+    }
+
     public void showClientWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Client.fxml"));
         ClientController clientController = new ClientController();

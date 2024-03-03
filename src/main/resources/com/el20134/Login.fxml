@@ -16,7 +16,7 @@
     </children>
 </AnchorPane> -->
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../login.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.el20134.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.el20134.LoginController">
       <VBox prefHeight="400.0" prefWidth="200.0" styleClass="login-logo-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <FontIcon iconColor="#c79a29" iconLiteral="mdi2b-book" iconSize="64" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LibNtua" />
@@ -30,5 +30,6 @@
             <TextField fx:id="password_fld" styleClass="input-field" />
             <Button fx:id="login_btn" mnemonicParsing="false" text="Login" />
             <Label fx:id="error_lbl" styleClass="error_lbl" />
+      <Button fx:id="register_now_btn" mnemonicParsing="false" text="Don't have account? Register now!" />
       </VBox>
 </AnchorPane>
