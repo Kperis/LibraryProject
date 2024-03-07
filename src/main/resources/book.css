@@ -1,5 +1,5 @@
 .book-container{
-    -fx-background-color: #2c3531;
+    -fx-background-color: transparent;
     -fx-background-radius: 10;
 }
 
@@ -14,4 +14,17 @@
 .book-container-vbox Label{
     -fx-font-size: 0.9em;
     -fx-text-fill: #ffcb9a;
+}
+
+.book-container Button{
+    -fx-background-color: #ffcb9a;
+    -fx-text-fill: #2c3531;
+    -fx-font-size: 1.1em;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, black, 1,0,0,2);
+}
+
+
+.books-list Button:hover{
+    -fx-cursor: hand;
 }

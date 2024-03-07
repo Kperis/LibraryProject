@@ -1,5 +1,7 @@
+/home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/ClientCellController.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/RegisterController.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/Basic.java
+/home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/BookCellFactory.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/LoginController.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/ClientController.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/Book.java
@@ -11,6 +13,7 @@
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/AccountType.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/ViewFactory.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/Category.java
+/home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/BookCellController.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/Model.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/module-info.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/Admin.java
@@ -18,3 +21,4 @@
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/ProfileController.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/User.java
 /home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/App.java
+/home/kaladin/SXOLI/multimedia/LibraryProject/src/main/java/com/el20134/ClientCellFactory.java

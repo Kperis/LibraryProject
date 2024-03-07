@@ -21,12 +21,20 @@ public class RegisterController implements Initializable{
     public TextField email_fld;
     public Button register_btn;
     public Label error_lbl;
+    public Button tologin_btn;
     private boolean allowRegistration;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         allowRegistration = true;
         register_btn.setOnAction(event -> onRegister());
+        tologin_btn.setOnAction(event -> ontoLogin());
+    }
+
+    private void ontoLogin(){
+        Stage stage = (Stage) error_lbl.getScene().getWindow();
+        Model.getInstance().getViewFactory().showLoginWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
     }
 
     private void onRegister(){
@@ -45,22 +53,28 @@ public class RegisterController implements Initializable{
         else{
             if(Model.getInstance().users != null){
                 for(Client client : Model.getInstance().users){
-                    if(client.getAdt() == adt_fld.getText()){
+                    
+                    if(client.getAdt().toLowerCase().equals(adt_fld.getText().trim().toLowerCase())){
                         error_lbl.setText("adt already in use");
                         allowRegistration = false;
                     }
-                    else if(client.getEmail() == email_fld.getText()){
+                    else if(client.getEmail().toLowerCase().equals(email_fld.getText().trim().toLowerCase())){
                         error_lbl.setText("email already in use");
                         allowRegistration = false;
                     }
                 }
                 if(allowRegistration){
+                    Client client = new Client(username_fld.getText().trim(), password_fld.getText().trim(), first_name_fld.getText().trim(), last_name_fld.getText().trim(), email_fld.getText().trim(), adt_fld.getText().trim());
+                    Model.getInstance().users.add(client);
                     Model.getInstance().getViewFactory().showLoginWindow();
                     Model.getInstance().getViewFactory().closeStage(stage);
                 }
             }
             else{
-                error_lbl.setText("NON");
+                Client client = new Client(username_fld.getText().trim(), password_fld.getText().trim(), first_name_fld.getText().trim(), last_name_fld.getText().trim(), email_fld.getText().trim(), adt_fld.getText().trim());
+                Model.getInstance().users.add(client);
+                Model.getInstance().getViewFactory().showLoginWindow();
+                Model.getInstance().getViewFactory().closeStage(stage);
             }
         }
     }

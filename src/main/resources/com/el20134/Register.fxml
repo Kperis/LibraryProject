@@ -12,6 +12,7 @@
       <VBox prefHeight="400.0" prefWidth="200.0" styleClass="register-logo-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <FontIcon iconColor="#cd930b" iconLiteral="mdi2b-book" iconSize="64" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Register" />
+      <Button fx:id="tologin_btn" mnemonicParsing="false" text="Go to Login" />
       </VBox>
       <VBox prefHeight="400.0" prefWidth="350.0" styleClass="register-form-container" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
             <Label text="First name:" />
@@ -26,7 +27,7 @@
             <TextField fx:id="adt_fld" />
             <Label text="email" />
             <TextField fx:id="email_fld" />
-            <Label styleClass="error_lbl" fx:id="error_lbl" />
+            <Label fx:id="error_lbl" styleClass="error_lbl" />
             <Button fx:id="register_btn" mnemonicParsing="false" text="Register" />
       </VBox>
 </AnchorPane>

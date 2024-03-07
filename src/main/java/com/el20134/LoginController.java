@@ -38,30 +38,32 @@ public class LoginController implements Initializable {
     private void onLogin(){
         Stage stage = (Stage) error_lbl.getScene().getWindow();
         if(Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT){
-            for(User user : Model.getInstance().users){
-                if(user.getUsername() == username_fld.getText() && user.getPassword() == password_fld.getText()){
+            for(Client user : Model.getInstance().users){
+                System.out.println(user.getUsername());
+                System.out.println(username_fld.getText().trim());
+                System.out.println(user.getPassword());
+                System.out.println(password_fld.getText().trim());
+                if(user.getUsername().equals(username_fld.getText().trim()) && user.getPassword().equals(password_fld.getText().trim())){
                     Model.getInstance().getViewFactory().showClientWindow();
                     Model.getInstance().getViewFactory().closeStage(stage);
+                    break;
                 }
-                else{
-                    username_fld.setText("");
-                    password_fld.setText("");
-                    error_lbl.setText("Invalid username/password");
-                }
-            }      
+            } 
+            username_fld.setText("");
+            password_fld.setText("");
+            error_lbl.setText("Invalid username/password");     
         }
         else{
-            for(User user : Model.getInstance().users){
-                if(user.getUsername() == username_fld.getText() && user.getPassword() == password_fld.getText()){
+            for(Admin admin : Model.getInstance().admins){
+                if(admin.getUsername().equals(username_fld.getText().trim()) && admin.getPassword().equals(password_fld.getText().trim())){
                     Model.getInstance().getViewFactory().showAdminWindow();
                     Model.getInstance().getViewFactory().closeStage(stage);
-                }
-                else{
-                    username_fld.setText("");
-                    password_fld.setText("");
-                    error_lbl.setText("Invalid username/password");
+                    break;
                 }
             }
+            username_fld.setText("");
+            password_fld.setText("");
+            error_lbl.setText("Invalid username/password");
         }
     }
 
