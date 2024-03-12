@@ -1,0 +1,29 @@
+.popup-container{
+    -fx-background-color: #116466 ;
+    -fx-background-radius: 10;
+}
+
+.popup-container-items{
+    -fx-padding: 4;
+    -fx-alignment: center;
+    -fx-background-color: #116466 ;
+    -fx-spacing: 4;
+}
+
+.popup-container-items HBox Label{
+    -fx-alignment: center;
+    -fx-font-size: 1.4em;
+    -fx-text-fill: #d9b08c;
+}
+
+.popup-container-items Button{
+    -fx-background-color: #d9b08c;
+    -fx-text-fill: white;
+    -fx-pref-height: 30;
+    -fx-pref-width: 350;
+    -fx-font-size: 1.2em;
+}
+
+.popup-container-items Button:hover{
+    -fx-cursor: hand;
+}

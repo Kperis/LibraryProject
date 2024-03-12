@@ -18,7 +18,7 @@
                         <FontIcon iconLiteral="fas-home" iconSize="20" />
                      </graphic>
                   </Button>
-                  <Button fx:id="caregories_btn" mnemonicParsing="false" prefWidth="140.0" text="Categories">
+                  <Button fx:id="categories_btn" mnemonicParsing="false" prefWidth="140.0" text="Categories">
                      <graphic>
                         <FontIcon iconLiteral="mdi2l-library-shelves" iconSize="20" />
                      </graphic>

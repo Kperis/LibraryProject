@@ -12,15 +12,21 @@ import java.util.List;
 
 import com.el20134.ViewFactory;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
+
 public class Model {
     private static Model model;
     private final ViewFactory viewFactory;
     private Client client;
-    public List<Client> users;
-    public List<Admin> admins;
-    public List<Book> books;
-    public List<Category> categories;
-    public List<Book> borrows;
+    private Admin admin;
+    public ObservableList<Client> users;
+    public ObservableList<Admin> admins;
+    public ObservableList<Book> books;
+    public ObservableList<Category> categories;
+    public ObservableList<Book> borrows;
 
     private Model(){
         this.viewFactory = new ViewFactory();
@@ -29,7 +35,7 @@ public class Model {
         }));
 
         this.client = new Client("","","","","","");
-        // Admin temp = new Admin("medialab", "medialab_2024");
+        Admin temp = new Admin("medialab", "medialab_2024");
         
         String folderName = "medialab";
         
@@ -43,11 +49,14 @@ public class Model {
             FileInputStream fileIn = new FileInputStream(filePath.toFile());
 
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-            users = (List<Client>) objectIn.readObject();
+            List<Client> temp2 = (List<Client>) objectIn.readObject();
             
-            if(users == null){
-                users = new ArrayList<>();
-                System.out.println("EMPTY");
+
+            if(temp2 == null){
+                users = FXCollections.observableArrayList();
+            }
+            else{
+                users = FXCollections.observableArrayList(temp2);
             }
            
 
@@ -56,6 +65,7 @@ public class Model {
 
         } catch(Exception e){
             e.printStackTrace();
+            users = FXCollections.observableArrayList();
         }
 
 
@@ -66,20 +76,26 @@ public class Model {
             FileInputStream fileIn = new FileInputStream(filePath.toFile());
 
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-            admins = (List<Admin>) objectIn.readObject();
+            List<Admin> temp2 = (List<Admin>) objectIn.readObject();
 
-            if(admins == null){
-                admins = new ArrayList<>();
+            if(temp2 == null){
+                admins = FXCollections.observableArrayList();
+                admins.add(temp);
             }
+            else{
+                admins = FXCollections.observableArrayList(temp2);
+            }
+
 
             objectIn.close();
             fileIn.close();
 
         }  catch(Exception e){
             e.printStackTrace();
+            admins = FXCollections.observableArrayList();
+            admins.add(temp);
         }
 
-        // admins.add(temp);
         try{
 
             String filename = "Categories.ser";
@@ -87,10 +103,13 @@ public class Model {
             FileInputStream fileIn = new FileInputStream(filePath.toFile());
 
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-            categories = (List<Category>) objectIn.readObject();
+            List<Category> temp2 = (List<Category>) objectIn.readObject();
 
-            if(categories == null){
-                categories = new ArrayList<>();
+            if(temp2 == null){
+                categories = FXCollections.observableArrayList();
+            }
+            else{
+                categories = FXCollections.observableArrayList(temp2);
             }
 
             objectIn.close();
@@ -98,6 +117,7 @@ public class Model {
             
         } catch(Exception e){
             e.printStackTrace();
+            categories = FXCollections.observableArrayList();
         }
 
 
@@ -108,10 +128,13 @@ public class Model {
             FileInputStream fileIn = new FileInputStream(filePath.toFile());
 
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-            books = (List<Book>) objectIn.readObject();
+            List<Book> temp2 = (List<Book>) objectIn.readObject();
 
-            if(books == null){
-                books = new ArrayList<>();
+            if(temp2 == null){
+                books = FXCollections.observableArrayList();
+            }
+            else{
+                books =  FXCollections.observableArrayList(temp2);
             }
 
             objectIn.close();
@@ -119,6 +142,7 @@ public class Model {
             
         }  catch(Exception e){
             e.printStackTrace();
+            books = FXCollections.observableArrayList();
         }
 
 
@@ -128,10 +152,13 @@ public class Model {
             FileInputStream fileIn = new FileInputStream(filePath.toFile());
 
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-            borrows = (List<Book>) objectIn.readObject();
+            List<Book> temp2 = (List<Book>) objectIn.readObject();
 
-            if(borrows == null){
-                borrows = new ArrayList<>();
+            if(temp2 == null){
+                borrows = FXCollections.observableArrayList();
+            }
+            else{
+                borrows = FXCollections.observableArrayList(temp2);
             }
 
             objectIn.close();
@@ -139,6 +166,7 @@ public class Model {
             
         } catch(Exception e){
             e.printStackTrace();
+            borrows = FXCollections.observableArrayList();
         }
     }
 
@@ -153,6 +181,15 @@ public class Model {
         return viewFactory;
     }
 
+    public void setupClient(Client client){
+        this.client = client;
+    }
+
+    public void setupAdmin(Admin admin){
+        this.admin = admin;
+    }
+
+
     private static void cleanup(){
         String folderName = "medialab";
     
@@ -163,7 +200,8 @@ public class Model {
             Path filePath = folderPath.resolve(filename);
             FileOutputStream fileout = new FileOutputStream(filePath.toFile());
             ObjectOutputStream out = new ObjectOutputStream(fileout);
-            out.writeObject(Model.getInstance().users);
+            List<Client> temp3 = new ArrayList<>(Model.getInstance().users);
+            out.writeObject(temp3);
             out.close();
             fileout.close();
             System.out.println("SERIALIZED USERS");
@@ -176,7 +214,8 @@ public class Model {
             Path filePath = folderPath.resolve(filename);
             FileOutputStream fileout = new FileOutputStream(filePath.toFile());
             ObjectOutputStream out = new ObjectOutputStream(fileout);
-            out.writeObject(Model.getInstance().categories);
+            List<Category> temp3 = new ArrayList<>(Model.getInstance().categories);
+            out.writeObject(temp3);
             out.close();
             fileout.close();
             System.out.println("SERIALIZED Categories");
@@ -190,7 +229,8 @@ public class Model {
             Path filePath = folderPath.resolve(filename);
             FileOutputStream fileout = new FileOutputStream(filePath.toFile());
             ObjectOutputStream out = new ObjectOutputStream(fileout);
-            out.writeObject(Model.getInstance().borrows);
+            List<Book> temp3 = new ArrayList<>(Model.getInstance().borrows);
+            out.writeObject(temp3);
             out.close();
             fileout.close();
             System.out.println("SERIALIZED Borrows");
@@ -203,7 +243,8 @@ public class Model {
             Path filePath = folderPath.resolve(filename);
             FileOutputStream fileout = new FileOutputStream(filePath.toFile());
             ObjectOutputStream out = new ObjectOutputStream(fileout);
-            out.writeObject(Model.getInstance().admins);
+            List<Admin> temp3 = new ArrayList<>(Model.getInstance().admins);
+            out.writeObject(temp3);
             out.close();
             fileout.close();
             System.out.println("SERIALIZED Admins");
@@ -216,7 +257,8 @@ public class Model {
             Path filePath = folderPath.resolve(filename);
             FileOutputStream fileout = new FileOutputStream(filePath.toFile());
             ObjectOutputStream out = new ObjectOutputStream(fileout);
-            out.writeObject(Model.getInstance().books);
+            List<Book> temp3 = new ArrayList<>(Model.getInstance().books);
+            out.writeObject(temp3);
             out.close();
             fileout.close();
             System.out.println("SERIALIZED Books");

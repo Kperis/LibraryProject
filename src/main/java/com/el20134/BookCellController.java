@@ -23,7 +23,10 @@ public class BookCellController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-
+        title_lbl.setText(book.getTitle());
+        author_lbl.setText(book.getAuthor());
+        isbn_lbl.setText(book.getIsbn());
+        rating_lbl.setText(Float.toString(book.getRating())); 
     }
 
 }

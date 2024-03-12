@@ -39,11 +39,8 @@ public class LoginController implements Initializable {
         Stage stage = (Stage) error_lbl.getScene().getWindow();
         if(Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT){
             for(Client user : Model.getInstance().users){
-                System.out.println(user.getUsername());
-                System.out.println(username_fld.getText().trim());
-                System.out.println(user.getPassword());
-                System.out.println(password_fld.getText().trim());
                 if(user.getUsername().equals(username_fld.getText().trim()) && user.getPassword().equals(password_fld.getText().trim())){
+                    Model.getInstance().setupClient(user);
                     Model.getInstance().getViewFactory().showClientWindow();
                     Model.getInstance().getViewFactory().closeStage(stage);
                     break;
@@ -56,6 +53,7 @@ public class LoginController implements Initializable {
         else{
             for(Admin admin : Model.getInstance().admins){
                 if(admin.getUsername().equals(username_fld.getText().trim()) && admin.getPassword().equals(password_fld.getText().trim())){
+                    Model.getInstance().setupAdmin(admin);
                     Model.getInstance().getViewFactory().showAdminWindow();
                     Model.getInstance().getViewFactory().closeStage(stage);
                     break;

@@ -19,7 +19,7 @@ public class AdminController implements Initializable{
                 case "Users":
                     admin_parent.setCenter(Model.getInstance().getViewFactory().getUsersView());
                     break;
-                case "Caetgories":
+                case "Categories":
                     admin_parent.setCenter(Model.getInstance().getViewFactory().getCategoriesView());
                     break;
                 case "Borrows":

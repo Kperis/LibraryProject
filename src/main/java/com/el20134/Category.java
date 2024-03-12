@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Category implements Serializable{
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+
+public class Category implements Serializable, Observable{
     private String name;
     private List<Book> books;
 
@@ -13,11 +16,25 @@ public class Category implements Serializable{
         this.books = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void removeCategory(String name){
 
     }
 
-    public void addCategory(String name){
-        
+    @Override
+    public void addListener(InvalidationListener listener) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addListener'");
     }
+
+    @Override
+    public void removeListener(InvalidationListener listener) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'removeListener'");
+    }
+
+    
 }

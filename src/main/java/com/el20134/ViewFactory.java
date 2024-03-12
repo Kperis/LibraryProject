@@ -5,16 +5,20 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 public class ViewFactory {
 
+    public Stage currentstage;
     private AccountType loginAccountType;
     //Client Views
     private final StringProperty clientSelectedMenuItem;
     private AnchorPane homeView;
     private AnchorPane myBooksView;
     private AnchorPane profileView;
+    private Popup currentpopup;
 
     //AdminViews
 
@@ -36,13 +40,53 @@ public class ViewFactory {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("LibNtua");
+        currentstage = stage;
         stage.show();
+
     }
 
     public ViewFactory(){
         this.loginAccountType = AccountType.CLIENT;
         this.clientSelectedMenuItem = new SimpleStringProperty("");
         this.adminSelectedMenuItem = new SimpleStringProperty("");
+    }
+
+    public void onAddBook(){
+        try {
+                // Load the FXML file
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AddBookPopup.fxml"));
+                AnchorPane popupContent = loader.load();
+
+                // Create a Popup to display the form
+                Popup popup = new Popup();
+                popup.getContent().add(popupContent);
+                popup.setAutoHide(true); 
+                currentpopup = popup;
+                popup.show(currentstage);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+    }
+
+    public void onAddCategory(){
+        try {
+            // Load the FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddCategoryPopup.fxml"));
+            AnchorPane popupContent = loader.load();
+
+            // Create a Popup to display the form
+            Popup popup = new Popup();
+            popup.getContent().add(popupContent);
+            popup.setAutoHide(true); 
+            currentpopup = popup;
+            popup.show(currentstage);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void hidePopup(){
+        currentpopup.hide();
     }
 
     public AccountType getLoginAccountType() {

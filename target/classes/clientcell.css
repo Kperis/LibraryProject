@@ -23,3 +23,8 @@
 .del_btn:hover{
     -fx-cursor: hand;
 }
+
+.special_lbl{
+    -fx-text-fill: rgb(255, 0, 0);
+    -fx-font-weight: bold;
+}
