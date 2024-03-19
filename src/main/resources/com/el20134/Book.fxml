@@ -7,19 +7,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="100.0" styleClass="book-container" stylesheets="@../../book.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-      <VBox prefHeight="116.0" prefWidth="100.0" styleClass="book-container-vbox" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <Label fx:id="title_lbl" text="Harry Potter" />
-            <Label fx:id="author_lbl" layoutX="12.0" layoutY="12.0" text="JK Rowling" />
-            <Label fx:id="isbn_lbl" layoutX="12.0" layoutY="32.0" text="0-9468-6485-3" />
-            <HBox>
-                  <FontIcon iconColor="#dcb415e8" iconLiteral="mdi2s-star" iconSize="16" />
-                  <Label fx:id="rating_lbl" text="4.2/5" />
-            </HBox>
-            <HBox>
-                  <FontIcon iconColor="#dcb415" iconLiteral="mdi2a-account-star" iconSize="16" />
-                  <Label fx:id="rating_count_lbl" text="12" />
-            </HBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="770.0" styleClass="cell-container" stylesheets="@../../clientcell.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+      <FontIcon iconColor="WHITE" iconLiteral="fas-book" iconSize="24" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <HBox prefHeight="40.0" prefWidth="550.0" styleClass="book-hbox" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="5.0">
+      <VBox prefHeight="40.0" prefWidth="385.0" styleClass="temp2">
+            <FontIcon fill="WHITE" iconLiteral="mdi2f-format-title" iconSize="16" />
+                  <Label fx:id="title_lbl" text="Harry Potter and The Order Of The Phoenix" />
       </VBox>
-   <Button fx:id="action_btn" mnemonicParsing="false" text="Delete" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="temp">
+            <FontIcon fill="WHITE" iconLiteral="mdi2t-typewriter" iconSize="16" />
+            <Label fx:id="author_lbl" styleClass="temp" text="JK Rowling" />
+      </VBox>
+      <VBox layoutX="116.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="temp">
+            <FontIcon fill="WHITE" iconLiteral="mdi2i-identifier" iconSize="16" />
+            <Label fx:id="isbn_lbl" text="234567" />
+      </VBox>
+      <VBox layoutX="223.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="temp">
+            <FontIcon fill="WHITE" iconLiteral="fas-star" iconSize="16" />
+            <Label fx:id="rating_lbl" text="3/5" />
+      </VBox>
+      <VBox layoutX="329.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="temp">
+            <FontIcon fill="WHITE" iconLiteral="fas-user" iconSize="16" />
+            <Label fx:id="rating_count_lbl" text="12" />
+      </VBox>
+      </HBox>
+      <Button fx:id="del_btn" mnemonicParsing="false" styleClass="del_btn" text="Delete" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="12.0" />
+   <Button fx:id="edit_btn" mnemonicParsing="false" styleClass="del_btn" text="Edit" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="12.0" />
 </AnchorPane>

@@ -14,16 +14,22 @@ import javafx.stage.Stage;
 
 
 public class LoginController implements Initializable {
-    
+    @FXML
     public ChoiceBox<AccountType> acc_selector;
     
+    @FXML
     public TextField username_fld;
     
+    @FXML
     public TextField password_fld;
+   
+    @FXML
     public Label error_lbl;
 
-    
+    @FXML
     public Button login_btn;
+    
+    @FXML
     public Button register_now_btn;
 
     @Override
@@ -39,6 +45,7 @@ public class LoginController implements Initializable {
         Stage stage = (Stage) error_lbl.getScene().getWindow();
         if(Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT){
             for(Client user : Model.getInstance().users){
+                System.out.println(user.getUsername());
                 if(user.getUsername().equals(username_fld.getText().trim()) && user.getPassword().equals(password_fld.getText().trim())){
                     Model.getInstance().setupClient(user);
                     Model.getInstance().getViewFactory().showClientWindow();

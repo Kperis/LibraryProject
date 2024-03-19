@@ -5,14 +5,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="mybooks-container" stylesheets="@../../mybooks.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="mybooks-container" stylesheets="@../../mybooks.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.el20134.MyBooksController">
       <VBox prefHeight="700.0" prefWidth="800.0" styleClass="mybooks-items-container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-         <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Currently Borrowed Books" />
-            <ListView prefHeight="600.0" prefWidth="810.0" />
-         </children>
+            <ListView fx:id="borrowed_list" prefHeight="600.0" prefWidth="810.0" />
       </VBox>
-   </children>
 </AnchorPane>

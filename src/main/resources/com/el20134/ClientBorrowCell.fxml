@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="770.0" styleClass="cell-container" stylesheets="@../../clientcell.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+      <FontIcon iconColor="WHITE" iconLiteral="fas-book" iconSize="24" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <HBox prefHeight="40.0" prefWidth="570.0" styleClass="borrow-hbox" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+      <VBox prefHeight="40.0" prefWidth="385.0" styleClass="temp2">
+            <FontIcon fill="WHITE" iconLiteral="mdi2f-format-title" iconSize="16" />
+            <Label fx:id="title_lbl" text="Harry Potter and The Order Of The Phoenix" />
+      </VBox>
+      <VBox layoutX="329.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="temp2">
+            <FontIcon fill="WHITE" iconLiteral="mdi2i-identifier" iconSize="16" />
+            <Label fx:id="isbn_lbl" text="192922" />
+      </VBox>
+      <VBox layoutX="297.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="temp2">
+            <Label fx:id="date_lbl" text="10/03/2024" />
+      </VBox>
+      <VBox layoutX="393.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="temp2">
+            <Label fx:id="return_date_lbl" text="15/03/2024" />
+      </VBox>
+      </HBox>
+</AnchorPane>

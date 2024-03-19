@@ -18,6 +18,9 @@
 .del_btn{
     -fx-background-color: #ffcb9a;
     -fx-text-fill: #116466;
+    -fx-pref-width: 60;
+    -fx-font-size: 0.8em;
+    -fx-font-weight: bold;
 }
 
 .del_btn:hover{
@@ -28,3 +31,86 @@
     -fx-text-fill: rgb(255, 0, 0);
     -fx-font-weight: bold;
 }
+
+.book-hbox{
+    -fx-spacing: 4;
+    -fx-alignment: center_left;
+    -fx-wrap-text: true;
+}
+
+.borrow-hbox{
+    -fx-spacing: 4;
+    -fx-alignment: center;
+    -fx-wrap-text: true;
+}
+
+/* .book-hbox VBox{
+    -fx-alignment: center;
+    -fx-pref-width: 200;
+    -fx-text-overrun: word-ellipsis;
+} */
+
+.temp{
+    -fx-alignment: center;
+    -fx-pref-width: 120;
+    -fx-spacing: 0;
+    -fx-padding: 0;
+    -fx-wrap-text: true;
+
+}
+
+.temp2{
+    -fx-alignment: center;
+    -fx-pref-width: 200;
+    -fx-spacing: 0;
+    -fx-padding: 0;
+    -fx-wrap-text: true;
+}
+
+.temp2 Label{
+    -fx-text-fill: #d9b08c;
+    -fx-font-size: 0.9em;
+    -fx-wrap-text: true;
+}
+
+.temp Label{
+    -fx-text-fill: #d9b08c;
+    -fx-font-size: 0.9em;
+    -fx-wrap-text: true;
+}
+
+.return_btn{
+    -fx-background-color: #ffcb9a;
+    -fx-text-fill: #116466;
+    -fx-pref-width: 160;
+    -fx-font-size: 0.8em;
+    -fx-font-weight: bold;
+}
+
+.return_btn:hover{
+    -fx-cursor: hand;
+}
+
+.commentvbox{
+    -fx-alignment: center_left;
+    -fx-spacing: 8;
+}
+
+.commentvbox Label{
+    -fx-text-fill: #d9b08c;
+    -fx-font-size: 0.9em;
+    -fx-font-weight: bold;
+
+}
+
+.commentvbox Text{
+    -fx-fill: #d9b08c;
+    -fx-font-size: 0.9em;
+}
+
+.warning{
+    -fx-text-fill: red;
+    -fx-font-size: 0.9em;
+    -fx-font-weight: bold;
+}
+

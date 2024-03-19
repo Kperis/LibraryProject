@@ -5,6 +5,7 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -18,7 +19,9 @@ public class ViewFactory {
     private AnchorPane homeView;
     private AnchorPane myBooksView;
     private AnchorPane profileView;
+    private AnchorPane bookpageView;
     private Popup currentpopup;
+
 
     //AdminViews
 
@@ -116,6 +119,16 @@ public class ViewFactory {
         return homeView;
     }
 
+    public AnchorPane getBookPageView(){
+        bookpageView = null;
+            try {
+                bookpageView = new FXMLLoader(getClass().getResource("BookPage.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        return bookpageView;
+    }
+
     public AnchorPane getMyBooksView(){
         if(myBooksView == null){
             try{
@@ -174,10 +187,11 @@ public class ViewFactory {
         return booksView;
     }
 
+
     public AnchorPane getUsersView(){
         if(usersView == null){
             try{
-                usersView = new FXMLLoader(getClass().getResource("UserList.fxml")).load();
+                usersView = new FXMLLoader(getClass().getResource("UsersList.fxml")).load();
             } catch(Exception e){
                 e.printStackTrace();
             }

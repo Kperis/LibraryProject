@@ -1,0 +1,21 @@
+.bookpage-container{
+    -fx-background-color:#d1e8e2;
+}
+
+.bookpage-container-vbox{
+    -fx-background-color:#d1e8e2;
+    -fx-spacing: 8;
+}
+
+.bookpage-container-vbox HBox{
+    -fx-background-color: #116466;
+    -fx-background-radius: 12;
+    -fx-alignment: center_left;
+    -fx-padding: 4;
+    -fx-spacing: 10;
+}
+
+.bookpage-container-vbox HBox Label{
+    -fx-text-fill: #d9b08c;
+    -fx-font-weight: bold;
+}

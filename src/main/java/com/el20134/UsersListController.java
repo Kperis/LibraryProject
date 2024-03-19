@@ -7,14 +7,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 
-public class MyBooksController implements Initializable{
+public class UsersListController implements Initializable{
+    
     @FXML
-    public ListView<Borrow> borrowed_list;
+    public ListView<Client> users_list;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        borrowed_list.setItems(Model.getInstance().getBorrowed_store());
-        borrowed_list.setCellFactory(new BorrowedCellFactory());
-
+        users_list.setItems(Model.getInstance().users);
+        users_list.setCellFactory(new ClientCellFactory());
     }
 }

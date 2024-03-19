@@ -13,14 +13,32 @@ import javafx.stage.Stage;
 
 
 public class RegisterController implements Initializable{
+
+    @FXML
     public TextField first_name_fld;
+    
+    @FXML
     public TextField last_name_fld;
+    
+    @FXML
     public TextField username_fld;
+    
+    @FXML
     public TextField password_fld;
+    
+    @FXML
     public TextField adt_fld;
+    
+    @FXML
     public TextField email_fld;
+    
+    @FXML
     public Button register_btn;
+    
+    @FXML
     public Label error_lbl;
+    
+    @FXML
     public Button tologin_btn;
     private boolean allowRegistration;
 

@@ -26,15 +26,20 @@ public class Model {
     public ObservableList<Admin> admins;
     public ObservableList<Book> books;
     public ObservableList<Category> categories;
-    public ObservableList<Book> borrows;
+    public ObservableList<Borrow> borrows;
+    private Book currentBook;
+    private Category currentcategory;
+    private ObservableList<Borrow> borrowed_store;
+    public boolean onEdit;
+
 
     private Model(){
         this.viewFactory = new ViewFactory();
+        currentBook = new Book(null, null, null, null, null, null, 0);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             cleanup();
         }));
 
-        this.client = new Client("","","","","","");
         Admin temp = new Admin("medialab", "medialab_2024");
         
         String folderName = "medialab";
@@ -42,6 +47,8 @@ public class Model {
         
         Path folderPath = Paths.get(System.getProperty("user.dir"), folderName);
         
+        onEdit = false;
+
         try{
             
             String filename = "Users.ser";
@@ -107,6 +114,8 @@ public class Model {
 
             if(temp2 == null){
                 categories = FXCollections.observableArrayList();
+                categories.add(new Category("Fantasy"));
+                categories.add(new Category("Science Fiction"));
             }
             else{
                 categories = FXCollections.observableArrayList(temp2);
@@ -118,6 +127,8 @@ public class Model {
         } catch(Exception e){
             e.printStackTrace();
             categories = FXCollections.observableArrayList();
+            categories.add(new Category("Fantasy"));
+            categories.add(new Category("Science Fiction"));
         }
 
 
@@ -132,6 +143,38 @@ public class Model {
 
             if(temp2 == null){
                 books = FXCollections.observableArrayList();
+                Book book1 = new Book("The Hunger Games", "9780439023481", "Suzanne Collins", "2008", "Scholastic Press", categories.get(0), 1);
+                Book book2 = new Book("Harry Potter and the Sorcerer's Stone", "9780590353427", "J.K. Rowling", "1997", "Scholastic", categories.get(0), 4);
+                Book book3 = new Book("Eragon", "9780375826696", "Christopher Paolini", "2002", "Knopf Books for Young Readers", categories.get(0), 2);
+                Book book4 = new Book("Dune", "9780441172719", "Frank Herbert", "1965", "Ace Books", categories.get(1), 3);
+                Book book5 = new Book("Mistborn: The Final Empire", "9780765311788", "Brandon Sanderson", "2006", "Tor Books", categories.get(0), 1);
+                Book book6 = new Book("The Name of the Wind", "9780756404741", "Patrick Rothfuss", "2007", "DAW Books", categories.get(0), 1);
+                Book book7 = new Book("Ready Player One", "9780307887443", "Ernest Cline", "2011", "Crown Publishers", categories.get(1), 1);
+                Book book8 = new Book("The Martian", "9780804139021", "Andy Weir", "2011", "Crown Publishers", categories.get(1), 2);
+                Book book9 = new Book("Red Rising", "9780345539786", "Pierce Brown", "2014", "Del Rey Books", categories.get(1), 5);
+                Book book10 = new Book("Leviathan Wakes", "9780316129084", "James S.A. Corey", "2011", "Orbit Books", categories.get(1), 2);
+                
+                books.add(book1);
+                books.add(book2);
+                books.add(book3);
+                books.add(book4);
+                books.add(book5);
+                books.add(book6);
+                books.add(book7);
+                books.add(book8);
+                books.add(book9);
+                books.add(book10);
+
+                categories.get(0).addBookToCategory(book1);
+                categories.get(0).addBookToCategory(book2);
+                categories.get(0).addBookToCategory(book3);
+                categories.get(1).addBookToCategory(book4);
+                categories.get(0).addBookToCategory(book5);
+                categories.get(0).addBookToCategory(book6);
+                categories.get(1).addBookToCategory(book7);
+                categories.get(1).addBookToCategory(book8);
+                categories.get(1).addBookToCategory(book9);
+                categories.get(1).addBookToCategory(book10);
             }
             else{
                 books =  FXCollections.observableArrayList(temp2);
@@ -142,7 +185,40 @@ public class Model {
             
         }  catch(Exception e){
             e.printStackTrace();
+
             books = FXCollections.observableArrayList();
+            Book book1 = new Book("The Hunger Games", "9780439023481", "Suzanne Collins", "2008", "Scholastic Press", categories.get(0), 1);
+            Book book2 = new Book("Harry Potter and the Sorcerer's Stone", "9780590353427", "J.K. Rowling", "1997", "Scholastic", categories.get(0), 4);
+            Book book3 = new Book("Eragon", "9780375826696", "Christopher Paolini", "2002", "Knopf Books for Young Readers", categories.get(0), 2);
+            Book book4 = new Book("Dune", "9780441172719", "Frank Herbert", "1965", "Ace Books", categories.get(1), 3);
+            Book book5 = new Book("Mistborn: The Final Empire", "9780765311788", "Brandon Sanderson", "2006", "Tor Books", categories.get(0), 1);
+            Book book6 = new Book("The Name of the Wind", "9780756404741", "Patrick Rothfuss", "2007", "DAW Books", categories.get(0), 1);
+            Book book7 = new Book("Ready Player One", "9780307887443", "Ernest Cline", "2011", "Crown Publishers", categories.get(1), 1);
+            Book book8 = new Book("The Martian", "9780804139021", "Andy Weir", "2011", "Crown Publishers", categories.get(1), 2);
+            Book book9 = new Book("Red Rising", "9780345539786", "Pierce Brown", "2014", "Del Rey Books", categories.get(1), 5);
+            Book book10 = new Book("Leviathan Wakes", "9780316129084", "James S.A. Corey", "2011", "Orbit Books", categories.get(1), 2);
+            
+            books.add(book1);
+            books.add(book2);
+            books.add(book3);
+            books.add(book4);
+            books.add(book5);
+            books.add(book6);
+            books.add(book7);
+            books.add(book8);
+            books.add(book9);
+            books.add(book10);
+
+            categories.get(0).addBookToCategory(book1);
+            categories.get(0).addBookToCategory(book2);
+            categories.get(0).addBookToCategory(book3);
+            categories.get(1).addBookToCategory(book4);
+            categories.get(0).addBookToCategory(book5);
+            categories.get(0).addBookToCategory(book6);
+            categories.get(1).addBookToCategory(book7);
+            categories.get(1).addBookToCategory(book8);
+            categories.get(1).addBookToCategory(book9);
+            categories.get(1).addBookToCategory(book10);
         }
 
 
@@ -152,7 +228,7 @@ public class Model {
             FileInputStream fileIn = new FileInputStream(filePath.toFile());
 
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-            List<Book> temp2 = (List<Book>) objectIn.readObject();
+            List<Borrow> temp2 = (List<Borrow>) objectIn.readObject();
 
             if(temp2 == null){
                 borrows = FXCollections.observableArrayList();
@@ -170,6 +246,46 @@ public class Model {
         }
     }
 
+    public Book getCurrentBook() {
+        return currentBook;
+    }
+
+    public Category getCurrentcategory() {
+        return currentcategory;
+    }
+
+    public void setCurrentcategory(Category currentcategory) {
+        this.currentcategory = currentcategory;
+    }
+
+    public ObservableList<Borrow> getBorrowed_store() {
+        return this.borrowed_store;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setupClient(Client client){
+        this.client = null;
+        this.client = client;
+        if(borrowed_store == null){
+            borrowed_store = FXCollections.observableArrayList();
+        }
+        else{
+            borrowed_store.clear();
+        }
+        for(Borrow borrow : borrows){
+           if(borrow.getClient().getEmail().equals(client.getEmail())){
+                borrowed_store.add(borrow);
+           }
+        }
+    }
+
+    public void setCurrentBook(Book currentBook) {
+        this.currentBook = currentBook;
+    }
+
     public static synchronized Model getInstance(){
         if(model == null){
             model = new Model();
@@ -181,9 +297,6 @@ public class Model {
         return viewFactory;
     }
 
-    public void setupClient(Client client){
-        this.client = client;
-    }
 
     public void setupAdmin(Admin admin){
         this.admin = admin;
@@ -229,7 +342,7 @@ public class Model {
             Path filePath = folderPath.resolve(filename);
             FileOutputStream fileout = new FileOutputStream(filePath.toFile());
             ObjectOutputStream out = new ObjectOutputStream(fileout);
-            List<Book> temp3 = new ArrayList<>(Model.getInstance().borrows);
+            List<Borrow> temp3 = new ArrayList<>(Model.getInstance().borrows);
             out.writeObject(temp3);
             out.close();
             fileout.close();
